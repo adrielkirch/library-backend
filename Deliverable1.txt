@@ -1,0 +1,42 @@
+    -- Create the Authors table
+    -- Create the Authors table
+    CREATE TABLE Authors (
+        author_id VARCHAR(36) PRIMARY KEY,
+        name VARCHAR(255)
+    );
+
+    -- Create the Books table
+    CREATE TABLE Books (
+        book_id VARCHAR(36) PRIMARY KEY,
+        title VARCHAR(255),
+        author_id VARCHAR(36),
+        price DECIMAL(10, 2),
+        quantity_available INT,
+        FOREIGN KEY (author_id) REFERENCES Authors(author_id)
+    );
+
+    -- Create the Customers table
+    CREATE TABLE Customers (
+        customer_id VARCHAR(36) PRIMARY KEY,
+        name VARCHAR(255),
+        email VARCHAR(255),
+        address VARCHAR(255)
+    );
+
+    -- Create the Orders table
+    CREATE TABLE Orders (
+        order_id VARCHAR(36) PRIMARY KEY,
+        customer_id VARCHAR(36),
+        order_date DATE,
+        FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+    );
+
+    -- Create the OrderDetails table
+    CREATE TABLE OrderDetails (
+        order_id VARCHAR(36),
+        book_id VARCHAR(36),
+        quantity INT,
+        PRIMARY KEY (order_id, book_id),
+        FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+        FOREIGN KEY (book_id) REFERENCES Books(book_id)
+    );
