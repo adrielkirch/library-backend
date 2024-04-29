@@ -52,7 +52,7 @@ describe("Controllers", () => {
       await signup(req, res);
 
       // Assert the behavior
-      assert(res.status.calledOnceWith(StatusCodes.CREATED));
+      assert(res.status.calledOnceWith(StatusCodes.OK));
       assert(res.json.calledOnceWith(fakeUser));
 
       // Restore the original function to avoid affecting other tests

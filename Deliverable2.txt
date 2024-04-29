@@ -13,16 +13,16 @@ INSERT INTO Authors (author_id, name) VALUES
 
 -- Insert records into the Books table
 INSERT INTO Books (book_id, title, author_id, price, quantity_available) VALUES
-('407409ac-fea6-49c0-84cb-84a650462f5a', '1faba27c-5e34-4892-a93d-0e781b2060c0', 'author1', 10.99, 100),
-('f46f13b5-bca1-4ee7-b814-c1b852645409', '883d1fb4-3cf6-4d55-b76c-faa588e1eb28', 'author2', 12.99, 80),
-('2bbcf629-e235-46d5-8605-ab4bd9a27ef9', '99d86a23-ad8b-4718-a6f8-da6654d38b19', 'author3', 15.99, 120),
-('31054f94-ff31-49de-84dc-ac92379d4982', '3e6164ec-e441-4dfb-b7bf-24ae608bde58', 'author4', 9.99, 90),
-('c58bee20-9e7e-4f63-b461-e879c2292292', '79868c9c-8f4a-43a7-8050-1084c39607e7', 'author5', 11.99, 110),
-('afa71cd4-ddda-43eb-aac5-2d05ecc4758a', '7e8131f1-71c6-4c94-aedf-b05b2b847043', 'author6', 14.99, 70),
-('310bfbea-3715-42cd-924e-6b78e645d245', '6a9dbf9b-e230-4e39-8a5b-d162f1646a13', 'author7', 8.99, 150),
-('a969a6d6-5b2b-402b-ba97-90e1176a1a42', '8072faa5-c081-4eb2-b37b-64c12a86ea9e', 'author8', 16.99, 60),
-('2095a13e-a5f6-4b99-bb95-68c8a728ea09', '5b636281-1c7b-44a9-a121-0cab05b619f6', 'author9', 13.99, 130),
-('2fc321ff-fadf-44e2-979c-d17cd68e8fa9', '24c52c20-6910-4a93-9046-415648bd132a',  'author10', 17.99, 50);
+('407409ac-fea6-49c0-84cb-84a650462f5a','title1', '1faba27c-5e34-4892-a93d-0e781b2060c0',  10.99, 100),
+('f46f13b5-bca1-4ee7-b814-c1b852645409','title2', '883d1fb4-3cf6-4d55-b76c-faa588e1eb28',  12.99, 80),
+('2bbcf629-e235-46d5-8605-ab4bd9a27ef9','title3', '99d86a23-ad8b-4718-a6f8-da6654d38b19',  15.99, 120),
+('31054f94-ff31-49de-84dc-ac92379d4982','title4', '3e6164ec-e441-4dfb-b7bf-24ae608bde58',  9.99, 90),
+('c58bee20-9e7e-4f63-b461-e879c2292292','title5', '79868c9c-8f4a-43a7-8050-1084c39607e7',  11.99, 110),
+('afa71cd4-ddda-43eb-aac5-2d05ecc4758a','title6', '7e8131f1-71c6-4c94-aedf-b05b2b847043',  14.99, 70),
+('310bfbea-3715-42cd-924e-6b78e645d245','title7', '6a9dbf9b-e230-4e39-8a5b-d162f1646a13',  8.99, 150),
+('a969a6d6-5b2b-402b-ba97-90e1176a1a42','title8', '8072faa5-c081-4eb2-b37b-64c12a86ea9e',  16.99, 60),
+('2095a13e-a5f6-4b99-bb95-68c8a728ea09','title9', '5b636281-1c7b-44a9-a121-0cab05b619f6',  13.99, 130),
+('2fc321ff-fadf-44e2-979c-d17cd68e8fa9','title10', '24c52c20-6910-4a93-9046-415648bd132a',, 17.99, 50);
 
 -- Insert records into the Customers table
 INSERT INTO Customers (customer_id, name, email, address) VALUES
@@ -62,3 +62,4 @@ INSERT INTO OrderDetails (order_id, book_id, quantity) VALUES
 ('e5c5f54e-c03b-492f-b351-566d96021da5', 'book8', 1),
 ('62232717-3f1c-4ae7-87ad-8cb66157def2', 'book9', 9),
 ('e1b57d23-b858-41dd-adc6-7cd3c2531e08', 'book10', 10);
+

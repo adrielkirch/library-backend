@@ -1,9 +1,10 @@
 const { StatusCodes } = require("http-status-codes");
-const orderService = require("../services/service.order");
+const genericService = require("../services/service.generic");
 
-async function findAll(req, res) {
+async function query(req, res) {
   try {
-    const orders = await orderService.findAll();
+    const { query } = req.body;
+    const orders = await genericService.query(query);
     res.status(StatusCodes.OK).json(orders);
   } catch (error) {
     console.error(error);
@@ -14,5 +15,5 @@ async function findAll(req, res) {
 }
 
 module.exports = {
-  findAll,
+  query,
 };
