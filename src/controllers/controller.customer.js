@@ -1,9 +1,12 @@
 const { StatusCodes } = require("http-status-codes");
 const customerService = require("../services/service.customer");
 
-async function findAll(req, res) {
+async function pagination(req, res) {
   try {
-    const customers = await customerService.findAll();
+    const page = req.query.page || 1;
+    const limit = req.query.limit || 3;
+
+    const customers = await customerService.pagination(page, limit );
     res.status(StatusCodes.OK).json(customers);
   } catch (error) {
     console.error(error);
@@ -13,7 +16,6 @@ async function findAll(req, res) {
   }
 }
 
-
 module.exports = {
-  findAll,
+  pagination,
 };

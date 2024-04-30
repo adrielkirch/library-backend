@@ -1,11 +1,10 @@
+
 const pool = require("../db/db.mysql");
 
-async function query(selectQuery) {
+async function queryAny(selectQuery) {
   try {
-    console.log("query: ", selectQuery);
-
-    const rows = await pool.query(selectQuery);
-
+    const connection = await pool.getConnection();
+    const rows =   await connection.query(selectQuery);
     return rows;
   } catch (error) {
     console.error("Error occurred while performing query", error);
@@ -13,5 +12,5 @@ async function query(selectQuery) {
   }
 }
 module.exports = {
-  query,
+  queryAny,
 };

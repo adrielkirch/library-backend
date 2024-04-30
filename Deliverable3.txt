@@ -1,6 +1,6 @@
 1. Get all books by a specific author
 
-   POST http://localhost:3000/generic
+   POST http://localhost:7000/generic
    
    Request Body:
    {
@@ -9,7 +9,7 @@
 
 2. Get the total number of books sold
 
-    POST http://localhost:3000/generic
+    POST http://localhost:7000/generic
 
     {
      "query": "SELECT SUM(quantity) AS total_books_sold FROM OrderDetails;"
@@ -21,7 +21,7 @@
 
 4. Get the top 5 best-selling books
 
-    POST http://localhost:3000/generic
+    POST http://localhost:7000/generic
 
     {
      "query": "SELECT Books.title, SUM(OrderDetails.quantity) AS total_sold FROM OrderDetails JOIN Books ON OrderDetails.book_id = Books.book_id GROUP BY Books.book_id ORDER BY total_sold DESC LIMIT 5;"
@@ -29,7 +29,7 @@
 
 5. Get the customers who have spent the most
 
-    POST http://localhost:3000/generic
+    POST http://localhost:7000/generic
 
     {
      "query": "SELECT Customers.name, SUM(OrderDetails.quantity * Books.price) AS total_spent FROM OrderDetails JOIN Orders ON OrderDetails.order_id = Orders.order_id JOIN Customers ON Orders.customer_id = Customers.customer_id JOIN Books ON OrderDetails.book_id = Books.book_id GROUP BY Customers.customer_id ORDER BY total_spent DESC;"
