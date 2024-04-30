@@ -1,13 +1,17 @@
 const customerRepository = require("../repositories/repository.customer");
 
 async function pagination(page, limit) {
-  const users = await customerRepository.pagination(page, limit);
-  return users;
+  const customers = await customerRepository.pagination(page, limit);
+  return customers;
 }
 
 async function search(value,page, limit) {
-  const users = await customerRepository.search(value, page, limit);
-  return users;
+  if (search === "") {
+    const customers = await orderRepository.pagination(page, limit);
+    return customers;
+  }
+  const customers = await customerRepository.search(value, page, limit);
+  return customers;
 }
 
 
