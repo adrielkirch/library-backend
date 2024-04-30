@@ -118,6 +118,16 @@ async function releaseConnection() {
   }
 }
 
+async function releaseInitialConnection() {
+  try {
+    await initPool.end();
+    console.log("Connection pool closed successfully.");
+  } catch (error) {
+    console.error("Error occurred while releasing connection:", error);
+  }
+}
+
+
 async function createManyRows() {
   try {
     const connection = await pool.getConnection();
@@ -214,6 +224,8 @@ const beforeStart = async () => {
   await createDatabase();
   await createTables();
   await createManyRows();
+  await releaseInitialConnection();
+
 };
 
 const getPool = () => {
