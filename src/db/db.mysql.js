@@ -128,17 +128,17 @@ async function createManyRows() {
     `;
 
     const insertBookQuery = `
-      INSERT INTO Books (title, price, quantity_available) VALUES
-      ('Book 1', 10.99, 100),
-      ('Book 2', 12.99, 80),
-      ('Book 3', 15.99, 120),
-      ('Book 4', 9.99, 90),
-      ('Book 5', 11.99, 110),
-      ('Book 6', 14.99, 70),
-      ('Book 7', 8.99, 150),
-      ('Book 8', 16.99, 60),
-      ('Book 9', 13.99, 130),
-      ('Book 10', 17.99, 50)
+      INSERT INTO Books (title, price, quantity_available,author_id) VALUES
+      ('Book 1', 10.99, 100,1),
+      ('Book 2', 12.99, 80,2),
+      ('Book 3', 15.99, 120,3),
+      ('Book 4', 9.99, 90,4),
+      ('Book 5', 11.99, 110,5),
+      ('Book 6', 14.99, 70,6),
+      ('Book 7', 8.99, 150,7),
+      ('Book 8', 16.99, 60,8),
+      ('Book 9', 13.99, 130,9),
+      ('Book 10', 17.99, 50,10)
     `;
 
     const insertCustomerQuery = `
@@ -156,18 +156,19 @@ async function createManyRows() {
     `;
 
     const insertOrdersQuery = `
-      INSERT INTO Orders (customer_id, order_date) VALUES
-      (1, '2024-04-29 01:00:00'),
-      (2, '2024-04-29 02:00:00'),
-      (3, '2024-04-29 02:00:00'),
-      (4, '2024-04-29 03:00:00'),
-      (5, '2024-04-29 04:00:00'),
-      (6, '2024-04-29 05:00:00'),
-      (7, '2024-04-29 06:00:00'),
-      (8, '2024-04-29 07:00:00'),
-      (9, '2024-04-29 08:00:00'),
-      (10, '2024-04-29 09:00:00')
-    `;
+    INSERT INTO Orders (customer_id, order_date) VALUES
+    (1, '2024-01-01 01:00:00'),
+    (2, '2024-01-02 02:00:00'),
+    (3, '2024-02-03 02:00:00'),
+    (4, '2024-03-04 03:00:00'),
+    (5, '2024-04-05 04:00:00'),
+    (6, '2024-05-06 05:00:00'),
+    (7, '2024-06-07 06:00:00'),
+    (8, '2024-07-08 07:00:00'),
+    (9, '2024-08-29 08:00:00'),
+    (10, '2024-09-29 09:00:00')
+  `;
+  
 
     const insertOrderDetailsQuery = `
       INSERT INTO OrderDetails (order_id, book_id, quantity) VALUES
