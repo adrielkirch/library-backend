@@ -1,6 +1,6 @@
 # Pub Library
 
-Short description of your project.
+Simple demo for a Public library using Layered Architecture, Mocha for Tests, Express to host API
 
 ## Getting Started
 
