@@ -23,3 +23,7 @@ A step-by-step series of examples that tell you how to get a development env run
 2. Start local development:
 
    ``` npm run start ```
+
+2. Test in local development:
+
+   ``` npm run test ```

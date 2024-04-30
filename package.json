@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/app.js",
-    "test": "npx mocha -w --parallel"
+    "test": "npx mocha ./tests/*.js --timeout 100000"
   },
   "author": "",
   "license": "ISC",
@@ -24,12 +24,13 @@
     "mysql-await": "^2.2.3",
     "mysql2": "^3.9.7",
     "net": "^1.0.2",
+    "supertest": "^7.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "chai": "^5.1.0",
-    "mocha": "^10.3.0",
+    "mocha": "^10.4.0",
     "nodemon": "^3.1.0",
     "sinon": "^17.0.1"
   }
