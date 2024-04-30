@@ -5,7 +5,13 @@ async function pagination(page, limit) {
   return users;
 }
 
+async function search(value,page, limit) {
+  const users = await customerRepository.search(value, page, limit);
+  return users;
+}
+
+
 
 module.exports = {
-  pagination
+  pagination,search
 };

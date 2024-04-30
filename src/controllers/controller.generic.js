@@ -4,8 +4,8 @@ const genericService = require("../services/service.generic");
 async function query(req, res) {
   try {
     const { query } = req.body;
-    const orders = await genericService.query(query);
-    res.status(StatusCodes.OK).json(orders);
+    const data = await genericService.query(query);
+    res.status(StatusCodes.OK).json(data);
   } catch (error) {
     console.error(error);
     res
