@@ -17,7 +17,7 @@ async function pagination(page, limit) {
       totalPages: totalPages,
       data: rows,
     };
-
+    connection.release();
     return result;
   } catch (error) {
     console.error("Error occurred while finding customers:", error);

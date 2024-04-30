@@ -7,7 +7,7 @@ const {
   MYSQL_PORT,
 } = require("../config");
 
-const pool = mysql.createPool({
+let pool = mysql.createPool({
   connectionLimit: 10,
   password: MYSQL_PASSWORD,
   user: MYSQL_USER,
@@ -16,7 +16,7 @@ const pool = mysql.createPool({
   port: MYSQL_PORT,
 });
 
-const initPool = mysql.createPool({
+let initPool = mysql.createPool({
   connectionLimit: 10,
   password: MYSQL_PASSWORD,
   user: MYSQL_USER,
@@ -108,25 +108,6 @@ async function createTables() {
     console.error("Error occurred:", error);
   }
 }
-
-async function releaseConnection() {
-  try {
-    await pool.end();
-    console.log("Connection pool closed successfully.");
-  } catch (error) {
-    console.error("Error occurred while releasing connection:", error);
-  }
-}
-
-async function releaseInitialConnection() {
-  try {
-    await initPool.end();
-    console.log("Connection pool closed successfully.");
-  } catch (error) {
-    console.error("Error occurred while releasing connection:", error);
-  }
-}
-
 
 async function createManyRows() {
   try {
@@ -224,8 +205,6 @@ const beforeStart = async () => {
   await createDatabase();
   await createTables();
   await createManyRows();
-  await releaseInitialConnection();
-
 };
 
 const getPool = () => {
@@ -238,6 +217,6 @@ module.exports = {
   dropDb,
   createTables,
   createManyRows,
-  releaseConnection,
+
   beforeStart,
 };
